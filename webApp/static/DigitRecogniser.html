@@ -10,105 +10,33 @@
 	
 	<style>
 		#theCanvas {
-      height: 400px;
-      width: 400px;
+      height: 450px;
+      width: 450px;
       background: white;
+      border: 2px solid black;
     }
 
     body {
-      background: #eee;
+      background: rgb(194, 194, 194);
     }
   </style>
 	
-    <title>Recogniser!</title>
+    <title>Digit Recogniser!</title>
   </head>
   <body>
-      <h1>HTML Canvas</h1>
+      <h1>Digit Recogniser</h1>
       <p>Draw something</p> 
       <canvas id="theCanvas"></canvas>
       <div>
-        <button id="clearButton">Clear</button>
-        <button onclick="to_Image()" id="saveButton">Save</button>
+        <button type="button" class="btn btn-secondary" id="clearButton">Clear</button>
+        <button onclick="to_Image()"  type="button" class="btn btn-secondary" id="saveButton">Save</button>
       </div>
       <image id="theImage"></image>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script>
-      const MAIN_MOUSE_BUTTON = 0;
-
-      function prepareContext(canvasElement) {
-        let dpr = window.devicePixelRatio || 1;
-        let rect = canvasElement.getBoundingClientRect();
-        canvasElement.width = rect.width * dpr;
-        canvasElement.height = rect.height * dpr;
-      
-        let context = canvasElement.getContext("2d");
-        context.scale(dpr, dpr);
-        
-        return context;
-      }
-
-      function setLineProperties(context) {
-        context.lineWidth = 4;
-        context.lineJoin = "round";
-        context.lineCap = "round";
-        return context;
-      }
-
-      let clearButton = document.getElementById("clearButton");
-      let theCanvas = document.getElementById("theCanvas");
-      let theContext = prepareContext(theCanvas);
-      let shouldDraw = false;
-
-      theCanvas.addEventListener("mousedown", start);
-      theCanvas.addEventListener("mouseup", end);
-      theCanvas.addEventListener("mousemove", move, false);
-
-      clearButton.addEventListener("click", event => {
-        clearCanvas(theContext);
-      });
-
-      
-      function clearCanvas(context) {
-        context.clearRect(0, 0, context.canvas.width, context.canvas.height);  
-      }
-
-      function start(event) {
-        if (event.button === MAIN_MOUSE_BUTTON) {
-          shouldDraw = true;
-          setLineProperties(theContext);
-
-          theContext.beginPath();
-          
-          let elementRect = event.target.getBoundingClientRect();
-          theContext.moveTo(event.clientX - elementRect.left, event.clientY - elementRect.top);
-        }
-      }
-
-      function end(event) {
-        if (event.button === MAIN_MOUSE_BUTTON) {
-          shouldDraw = false;
-        }
-      }
-
-      function move(event) {
-        if (shouldDraw) {
-          let elementRect = event.target.getBoundingClientRect();
-          theContext.lineTo(event.clientX - elementRect.left, event.clientY - elementRect.top);
-          theContext.stroke()
-        }
-      }
-
-      function to_Image(){
-        var canvas = document.getElementById("theCanvas");
-        document.getElementById("theImage").src = canvas.toDataURL();
-        Canvas2Image.saveAsPNG(canvas);
-            }
-    </script>
-  
+    <script src="/static/draw.js"></script>
   </body>
 </html>
