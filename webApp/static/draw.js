@@ -1,4 +1,5 @@
 //  Adapted from http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/
+
 const MAIN_MOUSE_BUTTON = 0;
 
 function prepareContext(canvasElement) {
