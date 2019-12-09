@@ -1,0 +1,12 @@
+/*  CSS style sheet for html page*/
+
+#theCanvas {
+    height: 400px;
+    width: 400px;
+    background: white;
+    border: 2px solid black;
+  }
+
+  body {
+    background: rgb(194, 194, 194);
+  }

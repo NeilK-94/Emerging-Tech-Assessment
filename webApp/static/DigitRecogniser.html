@@ -7,31 +7,23 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	
-	<style>
-		#theCanvas {
-      height: 400px;
-      width: 400px;
-      background: white;
-      border: 2px solid black;
-    }
 
-    body {
-      background: rgb(194, 194, 194);
-    }
-  </style>
+    <!-- Local CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
 	
     <title>Digit Recogniser!</title>
   </head>
   <body>
-      <h1>Digit Recogniser</h1>
-      <p>Draw something</p> 
-      <canvas id="theCanvas"></canvas>
-      <div>
-        <button type="button" class="btn btn-secondary" id="clearButton">Clear</button>
-        <button onclick="to_Image()"  type="button" class="btn btn-secondary" id="saveButton">Generate</button>
-      </div>
-      <image id="theImage"></image>
+    <h1>Digit Recogniser</h1>
+    <p>Draw something</p> 
+    <canvas id="theCanvas"></canvas>
+    <div>
+      <button type="button" class="btn btn-secondary" id="clearButton">Clear</button>
+      <button onclick="to_Image()"  type="button" class="btn btn-secondary" id="saveButton">Generate</button>
+    </div>
+    <h1>Prediction: <p id="predictedNumber"></p></h1>
+    <image id="theImage"></image> 
+    
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
