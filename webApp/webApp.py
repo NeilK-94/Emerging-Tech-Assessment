@@ -18,7 +18,7 @@ from PIL import Image, ImageOps
     # width = int(originalImage.shape[1] * scale_percent / 100)
     # height = int(originalImage.shape[0] * scale_percent / 100)
 
-model = load_model('MyModel8.h5')
+model = load_model('MyModel11.h5')
 
 imageWidth = 28
 imageHeight = 28
@@ -55,17 +55,22 @@ def uploadimage():
     #   Convert to grayscale and then convert that to an array
     grayscaleImage = ImageOps.grayscale(resizedImage)
     grayscaleArray = np.array(grayscaleImage)
-    grayscaleArray.shape    #   Gives (20, 20)
+    grayscaleArray.shape    #   Gives (28, 28)
 
     grayscaleArray = grayscaleArray.reshape(1, 28, 28)
     
-    setPrediction = model.predict(grayscaleArray)
+    #   flattened = grayscaleArray.flatten()
+    #   setPrediction = model.predict(flattened)
+
+    setPrediction = model.predict([grayscaleArray])
     print(setPrediction)    #   Always gives back same values
-    getPrediction = np.array(setPrediction) #[0]
+    getPrediction = np.array(setPrediction[0])
 
     #   argmax basically finds the maximum probability by index
     predictedNumber = str(np.argmax(getPrediction))
-    print(predictedNumber)  #   Always '5'
+    print(predictedNumber)  #   Always same
+
+    #   Consider removing flattened layer from model and just have dense with input_dim=784
  
     return predictedNumber
 
