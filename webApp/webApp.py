@@ -9,7 +9,7 @@
 import flask as fl  #   For creating the web application
 import base64   #   For decoding images
 #from cv2 import cv2  #   For resizing image
-from keras.models import load_model    #   For loading the model
+from keras.models import load_model, Sequential    #   For loading the model
 import numpy as np  #   For performing higher level math functions
 from PIL import Image, ImageOps
 
@@ -18,7 +18,8 @@ from PIL import Image, ImageOps
     # width = int(originalImage.shape[1] * scale_percent / 100)
     # height = int(originalImage.shape[0] * scale_percent / 100)
 
-model = load_model('MyModel1.h5')
+model = load_model('MyModel8.h5')
+
 imageWidth = 28
 imageHeight = 28
 dim = (imageWidth, imageHeight)
@@ -58,18 +59,14 @@ def uploadimage():
 
     grayscaleArray = grayscaleArray.reshape(1, 28, 28)
     
-    #cv2Image = cv2.imread("resizedImage.png")
-    #grayImage = cv2.cvtColor(cv2Image, cv2.COLOR_BGR2GRAY)
+    setPrediction = model.predict(grayscaleArray)
+    print(setPrediction)    #   Always gives back same values
+    getPrediction = np.array(setPrediction) #[0]
 
-    #grayArray = (np.array(grayImage).reshape(28, 28))
-
-    setPrediction = model.predict(grayscaleArray)    #  problem is here
-    getPrediction = np.array(setPrediction[0])
-
+    #   argmax basically finds the maximum probability by index
     predictedNumber = str(np.argmax(getPrediction))
-    print(predictedNumber)
-
-    #   return {"predictedNumber": predictedNumber}  
+    print(predictedNumber)  #   Always '5'
+ 
     return predictedNumber
 
 
