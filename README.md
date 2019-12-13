@@ -15,8 +15,8 @@ See the requirements.txt file in order to see the full list of packages and thei
 This project was mainly done in Python as well as some Javascript, HTML and CSS.
 
 Some modules and frameworks used include: 
-    * Flask
-        Flask is a web application framework written in Python. It provides you with tools, libraries and technologies that allow you to build a web application.
+* Flask
+Flask is a web application framework written in Python. It provides you with tools, libraries and technologies that allow you to build a web application.
     * JQuery
         JQuery is a tool which provides a set of AJAX methods to develop web application. Mainly HTTP (request) methods.
     * Keras
