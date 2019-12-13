@@ -16,13 +16,13 @@ This project was mainly done in Python as well as some Javascript, HTML and CSS.
 
 Some modules and frameworks used include: 
     * Flask
-    Flask is a web application framework written in Python. It provides you with tools, libraries and technologies that allow you to build a web application.
+        Flask is a web application framework written in Python. It provides you with tools, libraries and technologies that allow you to build a web application.
     * JQuery
-    JQuery is a tool which provides a set of AJAX methods to develop web application. Mainly HTTP (request) methods.
+        JQuery is a tool which provides a set of AJAX methods to develop web application. Mainly HTTP (request) methods.
     * Keras
-    Keras is an open-source neural-network library written in Python. It sits top of TensorFlow. It's designed to enable quick and easy development with deep neural networks.
+        Keras is an open-source neural-network library written in Python. It sits top of TensorFlow. It's designed to enable quick and easy development with deep neural networks.
     * PIL
-    (Previously Python Imaging Library) Pillow provides support for opening, manipulating, and saving many different image file formats.
+        (Previously Python Imaging Library) Pillow provides support for opening, manipulating, and saving many different image file formats.
 
 
 
