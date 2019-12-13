@@ -1,12 +1,15 @@
 # Recognition of Hand Written digits
 **Neil Kyne**
 
-This repository contains my submission for the module Emerging Technologies final year. The repository contains a jupyter notebook where I go through how to load the MNIST dataset, create a sequential neural network model, compile and train our model and finally test the model, among other things.
+### About the project
+Recognition of the MNIST dataset is considered to be a great introduction to machie learning and is dubbed the 'Hello World' of the field.
+
+This repository contains my submission for the module Emerging Technologies in year 4. The repository contains a jupyter notebook where I go through how to load the MNIST dataset, create a sequential neural network model, compile and train our model and finally test the model, among other things.
 
 It also contains a web application running on a flask server. The server interacts with the model we created in the jupyter notebook and sends/receives data to and from the web appication.
 
 ### Environment setup
-See the requirements.txt file in order to set up the correct environment to run the project.
+See the requirements.txt file in order to see the full list of packages and their versions I had installed while develooping the project.
 
 ### Technologies used
 This project was mainly done in Python as well as some Javascript, HTML and CSS.
