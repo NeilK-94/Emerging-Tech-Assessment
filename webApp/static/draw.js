@@ -71,9 +71,10 @@ function to_Image(){
      
   console.log(canvas.toDataURL());
 
-  $.post("/uploadimage", {"theImage": canvas.toDataURL()},function(data){
-    $("#predictedNumber").html(data);
-    console.log(data);  //  Prints predicted number
-  });
+  $.post("/uploadimage", {"theImage": canvas.toDataURL()}
+    ,function(data){
+      $("#predictedNumber").html(data);
+      console.log(data);  //  Prints predicted number
+    });
 
 }

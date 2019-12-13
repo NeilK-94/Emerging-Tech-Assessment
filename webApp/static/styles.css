@@ -10,3 +10,9 @@
   body {
     background: rgb(194, 194, 194);
   }
+
+  #predNumber {
+    position: absolute;
+    top: 35%;
+    left: 62.5%;
+  }
