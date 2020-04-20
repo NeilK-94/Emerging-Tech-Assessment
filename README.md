@@ -2,7 +2,7 @@
 **Neil Kyne**
 
 ### About the project
-Recognition of the MNIST dataset is considered to be a great introduction to machie learning and is dubbed the 'Hello World' of the field. The MNIST dataset contains over 70'000 images and labels of hand written digits ranging from 1-9.
+Recognition of the MNIST dataset is considered to be a great introduction to machine learning and is dubbed the 'Hello World' of the field. The MNIST dataset contains over 70'000 images and labels of hand written digits ranging from 1-9.
 
 This repository contains my submission for the module Emerging Technologies in year 4. The repository contains a jupyter notebook where I go through how to load the MNIST dataset, create a sequential neural network model, compile and train our model and finally test the model, among other things.
 
